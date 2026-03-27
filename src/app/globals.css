@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --md-background: #0e0d0c;
+  --md-surface: #181716;
+  --md-surface-variant: #222120;
+  --md-surface-container: #1d1c1b;
+  --md-surface-container-high: #2a2928;
+  --md-on-background: #f0ede8;
+  --md-on-surface: #c8c4be;
+  --md-on-surface-variant: #9e9891;
+  --md-outline: #3a3733;
+  --md-outline-variant: #272523;
+  --md-primary: #ffffff;
+  --md-on-primary: #1a0e00;
+  --md-primary-container: #2a1f0a;
+  --md-secondary: #ffffff;
+  --md-on-secondary: #1c1b18;
+  --md-tertiary: #8aabab;
+  --md-error: #cf6679;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--md-background);
+  --color-surface: var(--md-surface);
+  --color-surface-variant: var(--md-surface-variant);
+  --color-surface-container: var(--md-surface-container);
+  --color-surface-container-high: var(--md-surface-container-high);
+  --color-on-background: var(--md-on-background);
+  --color-on-surface: var(--md-on-surface);
+  --color-on-surface-variant: var(--md-on-surface-variant);
+  --color-outline: var(--md-outline);
+  --color-outline-variant: var(--md-outline-variant);
+  --color-primary: var(--md-primary);
+  --color-on-primary: var(--md-on-primary);
+  --color-primary-container: var(--md-primary-container);
+  --color-secondary: var(--md-secondary);
+  --color-tertiary: var(--md-tertiary);
+  --color-error: var(--md-error);
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-sans: "Manrope", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--md-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--md-outline);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-on-surface-variant);
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 300,
+    "GRAD" 0,
+    "opsz" 24;
+  user-select: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--md-background);
+  color: var(--md-on-background);
+  font-family: "Manrope", sans-serif;
 }
