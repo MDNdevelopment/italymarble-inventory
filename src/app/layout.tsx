@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer/Footer";
+import CartProvider from "@/components/providers/CartProvider";
+import FloatingCartButton from "@/components/FloatingCartButton";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -37,9 +39,12 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${manrope.variable} antialiased bg-background text-on-background`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <FloatingCartButton />
+        </CartProvider>
       </body>
     </html>
   );

@@ -1,28 +1,48 @@
+export interface SlabRow {
+  product_code: string;
+  material_index?: string;
+  surface_index?: string;
+  thickness?: number;
+  ind_tag?: string;
+  lot_no?: string;
+  quality?: string;
+  location?: string;
+  bin_location?: string;
+  length?: number;
+  width?: number;
+  length_net?: number;
+  width_net?: number;
+  quantity?: number;
+  unit?: string;
+  inspection?: boolean;
+  inactive?: boolean;
+  picture_ref?: string;
+  picture_s_ref?: string;
+  bookmatch?: string;
+  value?: number;
+  surface_area?: number;
+  contour_file?: string;
+}
+
 export interface Slab {
-  INDEX: number;
-  PRODUCT_CODE: string;
-  MATERIAL_INDEX: string;
-  SURFACE_INDEX: string;
-  THICKNESS: number;
-  TAG_NO: string;
-  LOT_NO: string;
-  QUALITY: string;
-  LOCATION: string;
-  BIN_LOCATION: string;
-  LENGTH: number;
-  WIDTH: number;
-  LENGTH_NET: number;
-  WIDTH_NET: number;
-  QUANTITY: number;
-  UNIT: string;
-  INSPECTION: boolean;
-  INACTIVE: boolean;
-  PICTURE_REF: string;
-  PICTURE_S_REF: string;
-  BOOKMATCH: string;
-  VALUE: number;
-  SURFACE_AREA: number;
-  CONTOUR_FILE: string;
+  id: number;
+  product_code: string;
+  material_index: string;
+  surface_index: string;
+  thickness: number;
+  ind_tag: string;
+  quality: string;
+  length: number;
+  width: number;
+  length_net: number;
+  width_net: number;
+  quantity: number;
+  unit: string;
+  inactive: boolean;
+  picture_ref: string;
+  picture_s_ref: string;
+  surface_area: number;
+  contour_file: string;
 }
 
 export interface FilterState {
