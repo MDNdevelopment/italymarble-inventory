@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="w-full z-50 bg-[#1b1b1b]">
-        <div className="flex justify-between items-center w-full  py-4.5 max-w-285 mx-auto ">
+        <div className="flex justify-between items-center w-full px-5 lg:px-0  py-4.5 max-w-285 mx-auto ">
           {/* Logo */}
           <Link
             href="https://www.mdnpublicidad.com/italymarble"
@@ -84,7 +84,7 @@ export default function Navbar() {
 
       {/* Mobile drawer backdrop */}
       <div
-        className={`fixed inset-0 z-40 bg-gray-400/10 transition-all duration-400 md:hidden ${
+        className={`fixed inset-0 z-40 bg-white/10 transition-all duration-1000 md:hidden ${
           drawerOpen ? "translate-x-0" : "delay-200 -translate-x-100"
         }`}
         onClick={closeDrawer}
@@ -93,8 +93,8 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`fixed top-0 left-0 z-50 h-full w-72 bg-white shadow-xl  transition-transform duration-300 ease-in-out md:hidden flex flex-col ${
-          drawerOpen ? "delay-200 translate-x-0" : "delay-0 -translate-x-100"
+        className={`fixed top-0 left-0 z-50 h-full w-76 bg-white shadow-xl  transition-transform duration-800 ease-in-out md:hidden flex flex-col ${
+          drawerOpen ? "delay-400 translate-x-0" : "delay-0 -translate-x-100"
         }`}
       >
         {/* Drawer header with logo */}
