@@ -28,13 +28,16 @@ export default function Navbar() {
   return (
     <>
       <nav className="w-full z-50 bg-[#1b1b1b]">
-        <div className="flex justify-between items-center w-full px-6 md:px-12 py-5 max-w-285 mx-auto">
+        <div className="flex justify-between items-center w-full  py-4.5 max-w-285 mx-auto ">
           {/* Logo */}
-          <Link href="https://www.mdnpublicidad.com/italymarble">
+          <Link
+            href="https://www.mdnpublicidad.com/italymarble"
+            className="pl-1"
+          >
             <Image
               src="/brand-logo.webp"
               alt="Brand Logo"
-              width={100}
+              width={117}
               height={40}
               className="object-contain"
               priority
@@ -42,12 +45,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden md:flex gap-7 font-['Plus_Jakarta_Sans'] uppercase  text-sm items-center">
+          <div className="hidden md:flex gap-7.5 font-headline uppercase  text-sm items-center pr-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-white transition-colors hover:text-white/70 font-headline font-medium text-[17px]"
+                className="text-white transition-colors hover:text-white/70  font-medium text-[17px]"
               >
                 {link.label}
               </a>
