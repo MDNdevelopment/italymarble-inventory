@@ -7,11 +7,14 @@ import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { useEscapeKey } from "@/hooks/useEscapeKey";
 
 const NAV_LINKS = [
-  { label: "HOME", href: "#" },
-  { label: "SERVICES", href: "#" },
-  { label: "GALLERY", href: "#" },
+  { label: "HOME", href: "https://mdnpublicidad.com/italymarble" },
+  {
+    label: "SERVICES",
+    href: "https://mdnpublicidad.com/italymarble/services/",
+  },
+  { label: "GALLERY", href: "https://mdnpublicidad.com/italymarble/gallery/" },
   { label: "LIVE INVENTORY", href: "/" },
-  { label: "CONTACT", href: "#" },
+  { label: "CONTACT", href: "https://mdnpublicidad.com/italymarble/contact/" },
 ];
 
 export default function Navbar() {
