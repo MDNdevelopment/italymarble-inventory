@@ -25,7 +25,7 @@ export default function ProductGrid({ slabs }: ProductGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {slabs.map((slab) => (
-        <SlabCard key={slab.PRODUCT_CODE} slab={slab} />
+        <SlabCard key={slab.product_code} slab={slab} />
       ))}
     </div>
   );
