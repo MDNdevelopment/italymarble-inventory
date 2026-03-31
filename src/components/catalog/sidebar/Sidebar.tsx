@@ -81,7 +81,6 @@ export default function Sidebar({
             selected={filters.finishes}
             onToggle={onToggleFinish}
           />
-          <div className="h-px bg-outline-variant" />
         </div>
       </div>
     </aside>

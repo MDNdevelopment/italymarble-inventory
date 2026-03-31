@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "HOME", href: "#" },
   { label: "SERVICES", href: "#" },
   { label: "GALLERY", href: "#" },
-  { label: "LIVE INVENTORY", href: "#" },
+  { label: "LIVE INVENTORY", href: "/" },
   { label: "CONTACT", href: "#" },
 ];
 

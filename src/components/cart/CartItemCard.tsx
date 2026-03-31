@@ -25,7 +25,9 @@ export default function CartItemCard({ item }: CartItemCardProps) {
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <span className="material-symbols-outlined text-on-surface-variant">image_not_supported</span>
+            <span className="material-symbols-outlined text-on-surface-variant">
+              image_not_supported
+            </span>
           </div>
         )}
       </div>
@@ -48,11 +50,6 @@ export default function CartItemCard({ item }: CartItemCardProps) {
       </div>
 
       <div className="flex flex-col items-end justify-between shrink-0">
-        {slab.value > 0 && (
-          <p className="text-on-surface font-semibold text-sm">
-            €{(slab.value / slab.surface_area).toFixed(0)}/m²
-          </p>
-        )}
         <button
           onClick={() => removeItem(slab.id)}
           className="text-on-surface-variant hover:text-error transition-colors"
