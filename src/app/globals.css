@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Century Gothic";
+  src: url("/fonts/centurygothic.ttf");
+}
+
 :root {
   --md-background: #0e0d0c;
   --md-surface: #181716;
@@ -38,7 +43,7 @@
   --color-tertiary: var(--md-tertiary);
   --color-error: var(--md-error);
 
-  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-headline: "Century Gothic", sans-serif;
   --font-body: "Manrope", sans-serif;
   --font-sans: "Manrope", sans-serif;
 }

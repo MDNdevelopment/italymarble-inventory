@@ -1,123 +1,90 @@
+import Link from "next/link";
+import Image from "next/image";
+
+const footerLinks = [
+  {
+    title: "Home",
+    href: "https://mdnpublicidad.com/italymarble",
+  },
+  { title: "Services", href: "#" },
+  {
+    title: "Gallery",
+    href: "#",
+  },
+  { title: "Live Inventory", href: "/" },
+  { title: "Contact", href: "#" },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-outline-variant mt-24">
-      <div className="max-w-[1440px] mx-auto px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-[#111111] border-t border-outline-variant mt-24">
+      <div className="max-w-[1140px] mx-auto px-8 py-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="text-xl font-bold tracking-tight text-on-background font-headline mb-4">
-              STONE GALLERY
-            </div>
-            <p className="text-on-surface-variant text-sm leading-relaxed">
-              Premium natural stone sourced from the finest quarries in Italy,
-              Brazil, and India. Curated for architects and interior designers.
+          <div className="lg:w-1/5">
+            <Link href="https://www.mdnpublicidad.com/italymarble">
+              <Image
+                src="/brand-logo.webp"
+                alt="Brand Logo"
+                width={200}
+                height={40}
+                className="object-contain"
+                priority
+              />
+            </Link>
+            <p className="text-on-surface-variant text-sm leading-relaxed mt-5">
+              Crafting timeless narratives in stone. For two decades, we’ve
+              defined luxury through precision fabrication and artisan souls.
             </p>
-            <div className="flex gap-4 mt-6">
-              {["instagram", "pinterest", "houzz"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  className="text-on-surface-variant hover:text-primary transition-colors capitalize text-xs tracking-widest"
-                >
-                  {s.toUpperCase()}
-                </a>
-              ))}
-            </div>
           </div>
-
-          {/* Collections */}
-          <div>
-            <h3 className="text-on-background text-xs font-semibold tracking-[0.18em] uppercase mb-6">
-              Collections
-            </h3>
-            <ul className="space-y-3">
-              {["Marble", "Granite", "Quartzite", "Limestone", "Travertine", "Onyx"].map(
-                (item) => (
-                  <li key={item}>
+          <div className="flex flex-row justify-between gap-4 w-1/3 ">
+            {/* Services */}
+            <div>
+              <h3 className="text-on-background font-headline text-sm font-semibold tracking-[0.18em] uppercase mb-6">
+                Navigation
+              </h3>
+              <ul className="space-y-1">
+                {footerLinks.map((item) => (
+                  <li key={item.title}>
                     <a
-                      href="#"
-                      className="text-on-surface-variant hover:text-on-surface text-sm transition-colors"
+                      href={item.href}
+                      className="text-on-surface-variant hover:text-on-surface text-sm transition-colors uppercase"
                     >
-                      {item}
+                      {item.title}
                     </a>
                   </li>
-                )
-              )}
-            </ul>
-          </div>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-on-background text-xs font-semibold tracking-[0.18em] uppercase mb-6">
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {[
-                "Custom Fabrication",
-                "Project Consulting",
-                "Sample Library",
-                "Installation Network",
-                "Trade Program",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="text-on-surface-variant hover:text-on-surface text-sm transition-colors"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-on-background text-xs font-semibold tracking-[0.18em] uppercase mb-6">
-              Contact
-            </h3>
-            <ul className="space-y-4 text-sm text-on-surface-variant">
-              <li className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-[18px] text-primary mt-0.5">
-                  location_on
-                </span>
-                <span>
-                  Via della Pietra 42
-                  <br />
-                  Milano, 20121 Italy
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-[18px] text-primary">
-                  call
-                </span>
-                <span>+39 02 1234 5678</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-[18px] text-primary">
-                  mail
-                </span>
-                <span>info@stonegallery.it</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-on-surface-variant text-xs">
-            © 2026 Stone Gallery S.r.l. All rights reserved.
-          </p>
-          <div className="flex gap-8">
-            {["Privacy Policy", "Terms of Use", "Cookie Settings"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-on-surface-variant hover:text-on-surface text-xs transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+            {/* Contact */}
+            <div>
+              <h3 className="text-on-background text-sm font-headline font-semibold tracking-[0.18em] uppercase mb-6">
+                Our Socials
+              </h3>
+              <div className="flex flex-row gap-3">
+                <div className="h-6 w-6 fill-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z" />
+                  </svg>
+                </div>
+                <div className="h-6 w-6 fill-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z" />
+                  </svg>
+                </div>
+                <div className="h-6 w-6 fill-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M332 70.5C229.4 70.5 128 138.9 128 249.6C128 320 167.6 360 191.6 360C201.5 360 207.2 332.4 207.2 324.6C207.2 315.3 183.5 295.5 183.5 256.8C183.5 176.4 244.7 119.4 323.9 119.4C392 119.4 442.4 158.1 442.4 229.2C442.4 282.3 421.1 381.9 352.1 381.9C327.2 381.9 305.9 363.9 305.9 338.1C305.9 300.3 332.3 263.7 332.3 224.7C332.3 158.5 238.4 170.5 238.4 250.5C238.4 267.3 240.5 285.9 248 301.2C234.2 360.6 206 449.1 206 510.3C206 529.2 208.7 547.8 210.5 566.7C213.9 570.5 212.2 570.1 217.4 568.2C267.8 499.2 266 485.7 288.8 395.4C301.1 418.8 332.9 431.4 358.1 431.4C464.3 431.4 512 327.9 512 234.6C512 135.3 426.2 70.5 332 70.5z" />
+                  </svg>
+                </div>
+                <div className="h-6 w-6 fill-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path d="M170.9 304.3L270.5 352.9C289.7 362.3 286.7 390.4 266 395.6L158.5 422.5C155.3 423.3 152.1 423.4 148.9 422.8C145.7 422.2 142.7 421 140 419.1C137.3 417.2 135.1 414.8 133.4 412C131.7 409.2 130.7 406.1 130.3 402.8C127 374 130.1 344.9 139.3 317.5C140.3 314.4 142 311.6 144.2 309.2C146.4 306.8 149.1 305 152.1 303.7C155.1 302.4 158.3 301.9 161.6 301.9C164.9 301.9 168 302.8 170.9 304.2zM214.9 543.6C238.7 559.9 265.8 570.9 294.3 575.7C297.5 576.3 300.8 576.1 303.9 575.3C307 574.5 310 573 312.5 570.9C315 568.8 317.1 566.3 318.5 563.4C319.9 560.5 320.8 557.3 320.9 554L324.8 443.2C325.5 421.9 299.3 411.3 285 427.1L210.8 509.5C208.6 511.9 207 514.8 206 517.9C205 521 204.7 524.3 205.1 527.5C205.5 530.7 206.6 533.8 208.2 536.6C209.8 539.4 212.1 541.8 214.8 543.6L214.8 543.6zM360.2 433.7L419 527.7C420.7 530.5 423 532.8 425.8 534.6C428.6 536.4 431.6 537.6 434.8 538.1C438 538.6 441.3 538.4 444.5 537.6C447.7 536.8 450.6 535.2 453.1 533.2C475.4 514.8 493.4 491.7 505.8 465.6C507.2 462.7 507.9 459.5 508 456.2C508.1 452.9 507.4 449.7 506.1 446.8C504.8 443.9 502.9 441.1 500.5 439C498.1 436.9 495.3 435.1 492.2 434.1L386.7 399.7C366.4 393.2 348.9 415.5 360.2 433.6zM508.6 301.4C497.1 274.9 479.9 251.2 458.2 232.1C455.8 230 452.9 228.4 449.8 227.4C446.7 226.4 443.4 226.2 440.2 226.6C437 227 433.9 228.1 431.1 229.8C428.3 231.5 426 233.8 424.2 236.5L362.2 328.4C350.3 346.1 366.9 369 387.4 363.1L494 332.6C497.1 331.7 500 330.1 502.5 328C505 325.9 507 323.3 508.3 320.3C509.6 317.3 510.4 314.1 510.5 310.9C510.6 307.7 509.9 304.4 508.6 301.4L508.6 301.4zM190.1 94.2C187.3 95.6 184.7 97.5 182.7 99.9C180.7 102.3 179.1 105.1 178.2 108.1C177.3 111.1 177 114.3 177.3 117.4C177.6 120.5 178.6 123.5 180.2 126.3L284.3 306.6C296 326.8 326.9 318.5 326.9 295.2L326.9 86.9C326.9 83.8 326.3 80.6 325.1 77.7C323.9 74.8 322 72.2 319.7 70.1C317.4 68 314.7 66.3 311.7 65.3C308.7 64.3 305.6 63.9 302.4 64.1C263.4 67.2 225.4 77.4 190.1 94.2z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
