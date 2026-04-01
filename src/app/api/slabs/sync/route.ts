@@ -44,7 +44,10 @@ export async function POST(req: NextRequest) {
     }
   } catch (err) {
     console.error("Sync DB error:", err);
-    return NextResponse.json({ error: "Database operation failed." }, { status: 500 });
+    return NextResponse.json(
+      { error: "Database operation failed." },
+      { status: 500 },
+    );
   }
 
   return NextResponse.json({ ok: true, summary: { upserted, removed } });

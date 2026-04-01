@@ -41,12 +41,6 @@ export default function SlabActions({ slab }: SlabActionsProps) {
           "Add to Cart"
         )}
       </button>
-      <button
-        onClick={() => slab.contour_file && window.open(slab.contour_file, "_blank")}
-        className="w-full border border-outline text-on-surface-variant text-xs tracking-[0.2em] uppercase font-semibold py-4 px-6 hover:border-primary hover:text-primary transition-colors"
-      >
-        Download DXF Files
-      </button>
     </div>
   );
 }
