@@ -28,10 +28,6 @@ export async function fetchFilteredSlabs(
     query = query.in("surface_index", filters.finishes);
   }
 
-  query = query
-    .gte("value", filters.priceRange[0])
-    .lte("value", filters.priceRange[1]);
-
   const from = (page - 1) * pageSize;
   const to = page * pageSize - 1;
 
@@ -45,7 +41,7 @@ export async function fetchSlabCounts() {
 
   const { data, error } = await supabase
     .from("slabs")
-    .select("material_index, ind_tag, surface_index, value")
+    .select("material_index, ind_tag, surface_index")
     .eq("inactive", false);
 
   return { data, error };

@@ -21,7 +21,6 @@ export default function CatalogPage() {
     availableColors,
     availableMaterials,
     availableFinishes,
-    priceRange: dbPriceRange,
     materialCounts,
     totalCount,
   } = useFilterOptions();
@@ -31,9 +30,8 @@ export default function CatalogPage() {
     toggleColor,
     toggleMaterial,
     toggleFinish,
-    setPriceRange,
     reset,
-  } = useFilters(dbPriceRange);
+  } = useFilters();
 
   const debouncedFilters = useDebouncedValue(filters);
   const {
@@ -64,13 +62,11 @@ export default function CatalogPage() {
               availableColors={availableColors}
               availableMaterials={availableMaterials}
               availableFinishes={availableFinishes}
-              priceBounds={dbPriceRange}
               materialCounts={materialCounts}
               filters={filters}
               onToggleColor={toggleColor}
               onToggleMaterial={toggleMaterial}
               onToggleFinish={toggleFinish}
-              onSetPriceRange={setPriceRange}
               onReset={reset}
             />
           </div>
@@ -107,13 +103,11 @@ export default function CatalogPage() {
           availableColors={availableColors}
           availableMaterials={availableMaterials}
           availableFinishes={availableFinishes}
-          priceBounds={dbPriceRange}
           materialCounts={materialCounts}
           filters={filters}
           onToggleColor={toggleColor}
           onToggleMaterial={toggleMaterial}
           onToggleFinish={toggleFinish}
-          onSetPriceRange={setPriceRange}
           onReset={reset}
         />
       </MobileFilterDrawer>

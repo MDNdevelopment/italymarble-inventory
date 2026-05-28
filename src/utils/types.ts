@@ -49,7 +49,6 @@ export interface FilterState {
   colors: string[];
   materials: string[];
   finishes: string[];
-  priceRange: [number, number];
 }
 
 export interface PaginationState {

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Slab } from "@/utils/types";
 import { getBadge, formatDimensions } from "@/utils/slabFilters";
@@ -17,12 +16,11 @@ export default function SlabCard({ slab }: SlabCardProps) {
       <article className="group relative bg-surface  overflow-hidden border border-outline-variant hover:border-outline transition-colors duration-300">
         {/* Image container */}
         <div className="relative w-full aspect-[5/6] overflow-hidden bg-surface-variant">
-          <Image
-            src={slab.picture_ref}
+          <img
+            src={slab.picture_ref || undefined}
             alt={slab.product_code}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
